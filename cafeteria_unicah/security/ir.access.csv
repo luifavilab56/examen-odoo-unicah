@@ -1,0 +1,3 @@
+id,name,model_id,group_id/id,operation,domain
+access_beneficio_vendedor,beneficio vendedor,cafeteria.beneficio,sales_team.group_sale_salesman,r,
+access_beneficio_admin,beneficio admin,cafeteria.beneficio,sales_team.group_sale_manager,crud,

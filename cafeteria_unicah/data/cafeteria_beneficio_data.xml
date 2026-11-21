@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="beneficio_becados" model="cafeteria.beneficio">
+            <field name="name">Beneficio becados</field>
+            <field name="categoria_cliente">becado</field>
+            <field name="porcentaje">20</field>
+            <field name="fecha_inicio">2026-01-01</field>
+        </record>
+
+        <record id="beneficio_empleados" model="cafeteria.beneficio">
+            <field name="name">Beneficio empleados</field>
+            <field name="categoria_cliente">empleado</field>
+            <field name="porcentaje">10</field>
+            <field name="fecha_inicio">2026-01-01</field>
+        </record>
+    </data>
+</odoo>

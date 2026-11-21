@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_cafeteria_beneficio_list" model="ir.ui.view">
+        <field name="name">cafeteria.beneficio.list</field>
+        <field name="model">cafeteria.beneficio</field>
+        <field name="arch" type="xml">
+            <list string="Beneficios Cafetería">
+                <field name="name"/>
+                <field name="categoria_cliente"/>
+                <field name="porcentaje"/>
+                <field name="fecha_inicio"/>
+                <field name="fecha_fin"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_cafeteria_beneficio_form" model="ir.ui.view">
+        <field name="name">cafeteria.beneficio.form</field>
+        <field name="model">cafeteria.beneficio</field>
+        <field name="arch" type="xml">
+            <form string="Beneficio de cafetería">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="categoria_cliente"/>
+                        <field name="porcentaje"/>
+                        <field name="fecha_inicio"/>
+                        <field name="fecha_fin"/>
+                        <field name="active"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_cafeteria_beneficios" model="ir.actions.act_window">
+        <field name="name">Beneficios Cafetería</field>
+        <field name="res_model">cafeteria.beneficio</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_cafeteria_beneficios"
+              name="Beneficios Cafetería"
+              parent="sale.menu_sale_config"
+              action="action_cafeteria_beneficios"
+              sequence="90"/>
+</odoo>
