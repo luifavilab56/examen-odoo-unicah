@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_partner_form_unicah_tutorias" model="ir.ui.view">
+        <field name="name">res.partner.form.unicah.tutorias</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page name="unicah_tutorias" string="Tutorías UNICAH">
+                    <group>
+                        <field name="es_tutor_unicah"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_unicah_tutoria_list" model="ir.ui.view">
+        <field name="name">unicah.tutoria.list</field>
+        <field name="model">unicah.tutoria</field>
+        <field name="arch" type="xml">
+            <list string="Sesiones de tutoría">
+                <field name="name"/>
+                <field name="estudiante_id"/>
+                <field name="tutor_id"/>
+                <field name="fecha_inicio"/>
+                <field name="fecha_fin"/>
+                <field name="duracion_horas"/>
+                <field name="estado"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_unicah_tutoria_form" model="ir.ui.view">
+        <field name="name">unicah.tutoria.form</field>
+        <field name="model">unicah.tutoria</field>
+        <field name="arch" type="xml">
+            <form string="Sesión de tutoría">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="estudiante_id" options="{'no_create': True}"/>
+                            <field name="tutor_id" options="{'no_create': True}"/>
+                        </group>
+                        <group>
+                            <field name="fecha_inicio"/>
+                            <field name="fecha_fin"/>
+                            <field name="duracion_horas" readonly="1"/>
+                            <field name="estado"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_unicah_tutorias" model="ir.actions.act_window">
+        <field name="name">Sesiones de tutoría</field>
+        <field name="res_model">unicah.tutoria</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_unicah_tutorias_root" name="Tutorías UNICAH"/>
+    <menuitem id="menu_unicah_tutorias_sesiones"
+              name="Sesiones"
+              parent="menu_unicah_tutorias_root"
+              action="action_unicah_tutorias"/>
+</odoo>
