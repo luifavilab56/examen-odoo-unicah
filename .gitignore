@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.venv/
+odoo.conf
+.env
+*.zip
+*.sql
+*.dump
